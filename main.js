@@ -142,27 +142,27 @@ if (cursors.up.isDown && lizard.body.touching.down) {
 
   }
   
-  window.moveLeft = function () {
+  window.moveLeft = () => {
   if (laneIndex > 0) {
     laneIndex--;
     lizard.x = lanes[laneIndex];
   }
 };
 
-window.moveRight = function () {
+window.moveRight = () => {
   if (laneIndex < 2) {
     laneIndex++;
     lizard.x = lanes[laneIndex];
   }
 };
 
-window.jump = function () {
+window.jump = () => {
   if (lizard.body.touching.down) {
     lizard.setVelocityY(-400);
   }
 };
 
-// scale: {
-//   mode: Phaser.Scale.FIT,
-//   autoCenter: Phaser.Scale.CENTER_BOTH
-// }
+window.restartGame = () => {
+  location.reload(); // Simple browser reload
+};
+

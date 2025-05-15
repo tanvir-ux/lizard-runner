@@ -1,15 +1,32 @@
 
 #mobile-controls {
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
   z-index: 1000;
 }
-#mobile-controls button {
-  font-size: 30px;
-  margin: 0 10px;
+#mobile-controls button,
+#restartBtn {
+  font-size: 28px;
+  padding: 12px 20px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
 }
+#restart-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+}
+
 
 @media (min-width: 768px) {
   #mobile-controls {

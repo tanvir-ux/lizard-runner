@@ -1,0 +1,18 @@
+
+#mobile-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+#mobile-controls button {
+  font-size: 30px;
+  margin: 0 10px;
+}
+
+@media (min-width: 768px) {
+  #mobile-controls {
+    display: none;
+  }
+}

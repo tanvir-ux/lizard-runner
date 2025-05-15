@@ -1,14 +1,18 @@
 // main.js
 const config = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    physics: {
-      default: 'arcade',
-      arcade: { gravity: { y: 800 }, debug: false }
-    },
-    scene: { preload, create, update }
-  };
+  type: Phaser.AUTO,
+  width: 800,
+  height: 600,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  },
+  physics: {
+    default: 'arcade',
+    arcade: { gravity: { y: 800 }, debug: false }
+  },
+  scene: { preload, create, update }
+};
   
   const game = new Phaser.Game(config);
   
@@ -135,5 +139,30 @@ if (cursors.up.isDown && lizard.body.touching.down) {
 }
 
 
+
   }
   
+  window.moveLeft = function () {
+  if (laneIndex > 0) {
+    laneIndex--;
+    lizard.x = lanes[laneIndex];
+  }
+};
+
+window.moveRight = function () {
+  if (laneIndex < 2) {
+    laneIndex++;
+    lizard.x = lanes[laneIndex];
+  }
+};
+
+window.jump = function () {
+  if (lizard.body.touching.down) {
+    lizard.setVelocityY(-400);
+  }
+};
+
+// scale: {
+//   mode: Phaser.Scale.FIT,
+//   autoCenter: Phaser.Scale.CENTER_BOTH
+// }

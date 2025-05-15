@@ -35,6 +35,10 @@ const config = {
   this.sound.play('gameOverSound');
 
   this.add.text(300, 250, 'Game Over', { fontSize: '40px', fill: '#fff' });
+
+  // Show restart button
+  document.getElementById('restart-container').style.display = 'block';
+  
 }
 
 
@@ -103,12 +107,12 @@ function addObstacle() {
   obstacle.setImmovable(true);
 }
 
-function hitObstacle(lizard, obstacle) {
-  this.physics.pause();
-  lizard.setTint(0xff0000);
-  // Optional: show "Game Over" text
-  this.add.text(300, 250, 'Game Over', { fontSize: '40px', fill: '#fff' });
-}
+// function hitObstacle(lizard, obstacle) {
+//   this.physics.pause();
+//   lizard.setTint(0xff0000);
+//   // Optional: show "Game Over" text
+//   this.add.text(300, 250, 'Game Over', { fontSize: '40px', fill: '#fff' });
+// }
   
   function update() {
     this.bg.tilePositionY -= 5;
